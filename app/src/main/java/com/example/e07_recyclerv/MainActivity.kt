@@ -44,6 +44,7 @@ fun MyApp(modifier: Modifier){
         SuperHeroGridView(modifier = Modifier.padding(innerpadding))
         //SimpleRecycleView(modifier = Modifier.padding(innerpadding))
         //SuperHeroStickView(modifier = Modifier.padding(innerpadding))
+        //TestImage()
 
     }
 }

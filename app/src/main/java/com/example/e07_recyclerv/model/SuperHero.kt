@@ -7,7 +7,8 @@ class SuperHero (
     var superHeroName: String,
     var realName: String,
     var publisher: String,
-    @DrawableRes var photo: Int
+    //@DrawableRes var photo: Int
+    val photo: String // URL de la imagen
 
     ){
 
