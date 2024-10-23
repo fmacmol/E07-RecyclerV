@@ -75,6 +75,7 @@ fun SuperHeroStickView(modifier: Modifier){
 
 @Composable
 fun ItemHero(superhero: SuperHero, onItemSelected: (SuperHero) -> Unit) {
+    //val imageUrl = superhero.photo
     Card(
         border = BorderStroke(1.dp, Color.Yellow),
         elevation = CardDefaults.run {
@@ -87,10 +88,9 @@ fun ItemHero(superhero: SuperHero, onItemSelected: (SuperHero) -> Unit) {
             .clickable { onItemSelected(superhero) }
     ) {
         Column {
-            val imageUrl = superhero.photo
             Image(
                 //painter = painterResource(id = superhero.photo),
-                painter = rememberAsyncImagePainter(imageUrl), // Cargar imagen desde URL
+                painter = rememberAsyncImagePainter(superhero.photo), // Cargar imagen desde URL
                 contentDescription = "Heroe Avatar",
                 modifier = Modifier
                     .fillMaxWidth()
@@ -126,6 +126,7 @@ fun TestImage() {
         modifier = Modifier.fillMaxSize()
     )
 }
+
 @Composable
 fun SuperHeroGridView(modifier: Modifier){
     val context = LocalContext.current
@@ -148,21 +149,22 @@ fun SuperHeroGridView(modifier: Modifier){
 @Composable
 fun getSuperHeroes(): List<SuperHero> {
     return listOf(
-        /*
-        SuperHero("Spiderman", "Petter Parcker", "Marvel", R.drawable.spiderman),
+
+        /*SuperHero("Spiderman", "Petter Parcker", "Marvel", R.drawable.spiderman),
         SuperHero("Wolverine", "James Howlett", "Marvel", R.drawable.logan),
         SuperHero("Batman", "Bruce Wayne", "DC", R.drawable.batman),
         SuperHero("Thor", "Thor Odison", "Marvel", R.drawable.thor),
         SuperHero("Flash", "Jay Garrick", "DC", R.drawable.flash),
         SuperHero("Green Lantern", "Alan Scott", "DC", R.drawable.green_lantern),
         SuperHero("Wonder Woman", "Princess Diana", "DC", R.drawable.wonder_woman)*/
-        SuperHero("Spiderman", "Peter Parker", "Marvel", "https://imgur.com/OON0E9b.png"),
+        SuperHero("Spiderman", "Peter Parker", "Marvel", "http//imgur.com/OON0E9b.png"),
         SuperHero("Wolverine", "James Howlett", "Marvel", "https://imgur.com/7bg6jdD.png"),
         SuperHero("Batman", "Bruce Wayne", "DC", "https://imgur.com/Ufw1BDT.png"),
         SuperHero("Thor", "Thor Odinson", "Marvel", "https://imgur.com/rPwtvrc.png"),
         SuperHero("Flash", "Jay Garrick", "DC", "https://imgur.com/Rnx0fw3.png"),
         SuperHero("Green Lantern", "Alan Scott", "DC", "https://imgur.com/cEoeecC.png"),
         SuperHero("Wonder Woman", "Princess Diana", "DC", "https://imgur.com/unHYxTU.png"),
+
     )
 }
 
